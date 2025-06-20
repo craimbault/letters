@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mnako/letters"
+	"github.com/craimbault/letters"
 )
 
 type emailTestCase struct {

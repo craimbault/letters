@@ -1,8 +1,8 @@
 # Letters, or how to parse emails in Go
 
-[![Go Reference](https://img.shields.io/badge/Reference-blue?logo=Go&labelColor=black)](https://pkg.go.dev/github.com/mnako/letters)
-[![Test](https://github.com/mnako/letters/actions/workflows/test.yml/badge.svg)](https://github.com/mnako/letters/actions/workflows/test.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/mnako/letters)](https://goreportcard.com/report/github.com/mnako/letters)
+[![Go Reference](https://img.shields.io/badge/Reference-blue?logo=Go&labelColor=black)](https://pkg.go.dev/github.com/craimbault/letters)
+[![Test](https://github.com/craimbault/letters/actions/workflows/test.yml/badge.svg)](https://github.com/craimbault/letters/actions/workflows/test.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/craimbault/letters)](https://goreportcard.com/report/github.com/craimbault/letters)
 
 **Letters** is a minimalistic Golang library for parsing plaintext and MIME
 emails.
@@ -30,7 +30,7 @@ inline and attached files.
 Install Letters:
 
 ```sh
-go get github.com/mnako/letters@v0.2.5
+go get github.com/craimbault/letters@v0.2.5
 ```
 
 ### Quickstart
@@ -51,7 +51,7 @@ import (
   "log"
   "os"
 
-  "github.com/mnako/letters"
+  "github.com/craimbault/letters"
 )
 
 func main() {

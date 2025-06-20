@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mnako/letters"
+	"github.com/craimbault/letters"
 )
 
 // Tests for simple helper functions: letters.ParseEmail, and
