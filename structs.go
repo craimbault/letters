@@ -36,6 +36,7 @@ var knownHeaders = map[string]void{
 	"Content-Transfer-Encoding": member,
 	"Content-Type":              member,
 	"Content-Disposition":       member,
+	"Content-Description":       member,
 }
 
 type ContentDisposition string
@@ -108,6 +109,8 @@ type ContentDispositionHeader struct {
 	ContentDisposition ContentDisposition
 	Params             map[string]string
 }
+
+type ContentDescriptionHeader string
 
 type Headers struct {
 	// RFC 3522 3.6.1.  The Origination Date Field
@@ -532,6 +535,7 @@ type Headers struct {
 	// and to avoid a potential conflict with a future official name.
 	ContentType        ContentTypeHeader
 	ContentDisposition ContentDispositionHeader
+	ContentDescription ContentDescriptionHeader
 	ExtraHeaders       map[string][]string
 }
 
@@ -568,11 +572,13 @@ type InlineFile struct {
 	ContentID          string
 	ContentType        ContentTypeHeader
 	ContentDisposition ContentDispositionHeader
+	ContentDescription ContentDescriptionHeader
 	Data               []byte
 }
 
 type AttachedFile struct {
 	ContentType        ContentTypeHeader
 	ContentDisposition ContentDispositionHeader
+	ContentDescription ContentDescriptionHeader
 	Data               []byte
 }

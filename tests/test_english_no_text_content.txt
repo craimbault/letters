@@ -13,6 +13,7 @@ Message-ID: <Message-Id-1@example.com>
 Subject: Test No Text Content, Attachment Only
 Content-Type: applicaTION/PDF; NAME="attached-pdf-name.pdf"
 Content-Disposition: AttachmenT; FILENAMe="attached-pdf-filename.pdf"
+Content-Description: My custom content description
 Content-Transfer-Encoding: BASE64
 X-Clacks-Overhead: GNU Terry Pratchett
 X-Script/function/	 !"#$%&'()*+,-./;<=>?@[\]^_`{|}~: TEST

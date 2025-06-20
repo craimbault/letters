@@ -15,6 +15,7 @@ type (
 	parseMessageIdHeaderFn               func(string) MessageId
 	parseCommaSeparatedMessageIdHeaderFn func(string) []MessageId
 	parseContentDispositionHeaderFn      func(string) (ContentDispositionHeader, error)
+	parseContentDescriptionHeaderFn      func(string) (ContentDescriptionHeader, error)
 	parseContentTypeHeaderFn             func(string) (ContentTypeHeader, error)
 )
 
@@ -41,6 +42,7 @@ type HeadersParsers struct {
 	ResentMessageID    parseMessageIdHeaderFn
 	ContentType        parseContentTypeHeaderFn
 	ContentDisposition parseContentDispositionHeaderFn
+	ContentDescription parseContentDescriptionHeaderFn
 	ExtraHeaders       map[string]parseStringHeaderFn
 }
 
@@ -217,6 +219,14 @@ func WithContentDispositionHeaderParser(
 ) EmailParserOption {
 	return func(ep *EmailParser) {
 		ep.headersParsers.ContentDisposition = contentDispositionHeaderParserFn
+	}
+}
+
+func WithContentDescriptionHeaderParser(
+	contentDescriptionHeaderParserFn parseContentDescriptionHeaderFn,
+) EmailParserOption {
+	return func(ep *EmailParser) {
+		ep.headersParsers.ContentDescription = contentDescriptionHeaderParserFn
 	}
 }
 

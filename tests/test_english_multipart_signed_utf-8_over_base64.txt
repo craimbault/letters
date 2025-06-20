@@ -54,6 +54,7 @@ ei4KUGFjayBteSBib3ggd2l0aCBmaXZlIGRvemVuIGxpcXVvciBqdWdzLg==
 
 --SignedBoundaryString
 Content-Type: APPLICATIon/pkcs7-signatUrE; NAME=smime.p7s
+Content-Description: My custom content description
 Content-Transfer-Encoding: baSE64
 Content-Disposition: aTTACHMeNT; FILENAmE=smime.p7s
 

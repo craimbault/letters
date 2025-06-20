@@ -205,6 +205,7 @@ func TestParseEmailEnglishNoTextContent(t *testing.T) {
 							"filename": "attached-pdf-filename.pdf",
 						},
 					},
+					ContentDescription: letters.ContentDescriptionHeader("My custom content description"),
 					ExtraHeaders: map[string][]string{
 						"X-Clacks-Overhead": {"GNU Terry Pratchett"},
 						"X-Script/function/\t !\"#$%&'()*+,-./;<=>?@[\\]^_`{|}~": {
@@ -230,6 +231,7 @@ func TestParseEmailEnglishNoTextContent(t *testing.T) {
 								"filename": "attached-pdf-filename.pdf",
 							},
 						},
+						ContentDescription: letters.ContentDescriptionHeader("My custom content description"),
 						Data: []byte{
 							37, 80, 68, 70, 45, 49, 46, 13, 116, 114, 97, 105, 108, 101, 114, 60, 60,
 							47, 82, 111, 111, 116, 60, 60, 47, 80, 97, 103, 101, 115, 60, 60, 47, 75, 105, 100, 115, 91, 60,
@@ -6927,6 +6929,7 @@ Pack my box with five dozen liquor jugs.`,
 								"filename": "smime.p7s",
 							},
 						},
+						ContentDescription: letters.ContentDescriptionHeader("My custom content description"),
 						Data: []byte{
 							130,
 							28,

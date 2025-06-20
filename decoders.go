@@ -173,6 +173,17 @@ func decodeInlineFile(
 		)
 	}
 
+	ifl.ContentDescription, err = ParseContentDescription(
+		part.Header.Get("Content-Description"),
+	)
+	if err != nil {
+		return ifl, fmt.Errorf(
+			"letters.decoders.decodeInlineFile: "+
+				"cannot parse Content-Description of inline attachment: %w",
+			err,
+		)
+	}
+
 	return ifl, nil
 }
 
@@ -194,6 +205,7 @@ func decodeAttachmentFileFromBody(
 
 	afl.ContentType = headers.ContentType
 	afl.ContentDisposition = headers.ContentDisposition
+	afl.ContentDescription = headers.ContentDescription
 	afl.Data, err = io.ReadAll(decoded)
 	if err != nil {
 		return afl, fmt.Errorf(
@@ -239,6 +251,17 @@ func decodeAttachedFileFromPart(
 		return afl, fmt.Errorf(
 			"letters.decoders.decodeAttachedFileFromPart: "+
 				"cannot parse Content-Disposition of attached file: %w",
+			err,
+		)
+	}
+
+	afl.ContentDescription, err = ParseContentDescription(
+		part.Header.Get("Content-Description"),
+	)
+	if err != nil {
+		return afl, fmt.Errorf(
+			"letters.decoders.decodeAttachedFileFromPart: "+
+				"cannot parse Content-Description of attached file: %w",
 			err,
 		)
 	}

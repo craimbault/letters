@@ -191,6 +191,10 @@ func ParseContentDisposition(s string) (ContentDispositionHeader, error) {
 	}, nil
 }
 
+func ParseContentDescription(s string) (ContentDescriptionHeader, error) {
+	return ContentDescriptionHeader(strings.Trim(s, "\n")), nil
+}
+
 func ParseContentTransferEncoding(s string) (ContentTransferEncoding, error) {
 	label := normalizeParametrizedAttributeValue(s)
 	if label == "" {
@@ -263,6 +267,10 @@ func (ep *EmailParser) ParseHeaders(header mail.Header) (Headers, error) {
 
 	contentDisposition, _ := ep.headersParsers.ContentDisposition(
 		header.Get("Content-Disposition"),
+	)
+
+	contentDescription, _ := ep.headersParsers.ContentDescription(
+		header.Get("Content-Description"),
 	)
 
 	extraHeaders := make(map[string][]string)
@@ -419,6 +427,7 @@ func (ep *EmailParser) ParseHeaders(header mail.Header) (Headers, error) {
 		),
 		ContentType:        contentType,
 		ContentDisposition: contentDisposition,
+		ContentDescription: contentDescription,
 		ExtraHeaders:       extraHeaders,
 	}, nil
 }

@@ -58,6 +58,7 @@ func DefaultHeadersParsers() HeadersParsers {
 		ResentMessageID:    ParseMessageIdHeader,
 		ContentType:        ParseContentTypeHeader,
 		ContentDisposition: ParseContentDisposition,
+		ContentDescription: ParseContentDescription,
 		ExtraHeaders:       make(map[string]parseStringHeaderFn),
 	}
 }
