@@ -427,6 +427,7 @@ following options and types are available:
 | Resent-Message-ID   | `WithResentMessageIdHeaderParser(parseMessageIdHeaderFn)`             | `func(string) letters.MessageId`                         |
 | Content-Type        | `WithContentTypeHeaderParser(parseContentTypeHeaderFn)`               | `func(string) (letters.ContentTypeHeader, error)`        |
 | Content-Disposition | `WithContentDispositionHeaderParser(parseContentDispositionHeaderFn)` | `func(string) (letters.ContentDispositionHeader, error)` |
+| Content-Description | `WithContentDescriptionHeaderParser(parseContentDescriptionHeaderFn)` | `func(string) (letters.ContentDispositionHeader, error)` |
 
 #### Customising Extra Headers Parsers
 
